@@ -91,7 +91,7 @@ public class SpringBootControllerTest {
 		mockMvc.perform(get("/new"))
         .andExpect(status().isOk())
         .andExpect(view().name("new_product"))
-        .andExpect(model().size(2))
+        .andExpect(model().size(1))
         .andExpect(model().attributeExists("productForm"));
 	}
 }
