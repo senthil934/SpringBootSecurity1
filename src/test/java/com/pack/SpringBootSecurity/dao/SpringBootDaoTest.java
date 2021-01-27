@@ -43,7 +43,7 @@ public class SpringBootDaoTest {
 		for (Product product : allProductsFromDb) {
 			productList.add(product);
 		}
-		assertThat(productList.size()).isEqualTo(2);
+		assertThat(productList.size()).isEqualTo(4);
 	}
 
 	@Test
@@ -55,7 +55,7 @@ public class SpringBootDaoTest {
 		for (Product product : allProductsFromDb) {
 			productList.add(product);
 		}
-		assertThat(productList.size()).isEqualTo(2);
+		assertThat(productList.size()).isEqualTo(4);
 	}
 	
 	@Test
