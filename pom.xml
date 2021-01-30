@@ -98,7 +98,66 @@
 			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
-
+<profiles>
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <sonar.host.url>
+                    http://localhost:9000
+                </sonar.host.url>
+                <sonar.sources>src/main</sonar.sources>
+                     <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+                <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+                <sonar.jacoco.reportPaths>${project.basedir}\target\jacoco.exec
+                </sonar.jacoco.reportPaths>
+                <sonar.language>java</sonar.language>
+                <sonar.exclusions>
+      **/UserDetailsServiceImpl.java,
+      **/UserServiceImpl.java,
+      **/UserValidator.java,
+      **/WebSecurityConfig.java,
+      **/SpringBootSecurityApplication.java,
+      **/ServletInitializer.java,
+      **/User.java,
+      **/Product.java,
+      **/Role.java,
+      **/UserRepository.java,
+      **/RoleRespository.java,
+      **/UserService.java
+    </sonar.exclusions>
+            </properties>
+            <build>
+                <plugins>
+                  
+                    <plugin>
+                        <groupId>org.sonarsource.scanner.maven</groupId>
+                        <artifactId>sonar-maven-plugin</artifactId>
+                        <version>3.6.0.1398</version>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                        <version>0.8.4</version>
+                        <configuration>
+                            <destFile>${sonar.jacoco.reportPaths}</destFile>
+                            <append>true</append>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>agent</id>
+                                <goals>
+                                    <goal>prepare-agent</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 	<build>
 		<plugins>
 			<plugin>

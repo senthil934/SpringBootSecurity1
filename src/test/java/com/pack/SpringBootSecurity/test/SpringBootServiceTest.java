@@ -1,4 +1,4 @@
-package com.pack.SpringBootSecurity.service;
+package com.pack.SpringBootSecurity.test;
 
 
 
@@ -22,6 +22,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.pack.SpringBootSecurity.model.Product;
 import com.pack.SpringBootSecurity.repository.ProductRepsitory;
+import com.pack.SpringBootSecurity.service.ProductService;
 
 
 
