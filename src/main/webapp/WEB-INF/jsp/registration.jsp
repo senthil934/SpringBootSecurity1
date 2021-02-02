@@ -25,7 +25,7 @@
 
 <body>
 
-<div class="container">
+<%-- <div class="container">
 
     <form:form method="POST" modelAttribute="userForm" class="form-signin">
         <h2 class="form-signin-heading">Create your account</h2>
@@ -52,12 +52,12 @@
             </div>
         </spring:bind>
 
-       <%--  <spring:bind path="roles">
+        <spring:bind path="roles">
             <div class="form-group ${status.error ? 'has-error' : ''}">
                <form:checkboxes items = "${roleList}" value="${roleList.key}" path = "roles" />
                 <form:errors path="roles"></form:errors>
             </div>
-        </spring:bind> --%>
+        </spring:bind>
         
         <spring:bind path="role">
             <div class="form-group ${status.error ? 'has-error' : ''}">
@@ -69,8 +69,40 @@
         <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
     </form:form>
 
-</div>
+</div> --%>
 <!-- /container -->
+<div class="container">
 
+    <form:form method="POST" modelAttribute="userForm" class="form-signin">
+        <h2 class="form-signin-heading">Create your account</h2>
+            <div class="form-group">
+                <form:input type="text" path="username" class="form-control" placeholder="Username"
+                            autofocus="true"></form:input>
+                           <span class="text-danger">  <form:errors path="username" ></form:errors></span>
+            </div>
+        
+            <div class="form-group">
+                <form:input type="password" path="password" class="form-control" placeholder="Password"></form:input>
+                <span class="text-danger"> <form:errors path="password"></form:errors></span>
+            </div>
+       
+            <div class="form-group">
+                <form:input type="password" path="passwordConfirm" class="form-control"
+                            placeholder="Confirm your password"></form:input>
+                           <span class="text-danger">  <form:errors path="passwordConfirm"></form:errors></span>
+            </div>
+       
+        
+       
+            <div class="form-group">
+              
+               <form:radiobutton path="role" value="1" />USER
+                <form:radiobutton path="role" value="2" />ADMIN
+            </div>
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+    </form:form>
+
+</div>
 </body>
 </html>

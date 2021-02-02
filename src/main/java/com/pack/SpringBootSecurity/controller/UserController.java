@@ -39,7 +39,6 @@ public class UserController {
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public String registration(Model model) {
         model.addAttribute("userForm", new User());
-
         return "registration";
     }
 
@@ -49,14 +48,16 @@ public class UserController {
         if (bindingResult.hasErrors()) {
             return "registration";
         }
-        System.out.println(userForm.getUsername()+" "+userForm.getPassword());
+        //System.out.println(userForm.getUsername()+" "+userForm.getPassword());
         Role role=userForm.getRole();
-        System.out.println(role);
+      //  System.out.println(role);
         userForm.setRole(role);
-        System.out.println(userForm.getRole().getName()+" "+userForm.getUsername()+" "+userForm.getPassword());
+      //  System.out.println(userForm.getRole().getName()+" "+userForm.getUsername()+" "+userForm.getPassword());
         userService.save(userForm);
         return "redirect:/welcome";
     }
+    
+  
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Model model, String error, String logout) {

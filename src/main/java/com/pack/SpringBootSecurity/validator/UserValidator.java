@@ -13,7 +13,7 @@ import com.pack.SpringBootSecurity.service.UserService;
 
 @Component
 public class UserValidator implements Validator {
-    @Autowired
+	@Autowired
     private UserService userService;
 
     @Override

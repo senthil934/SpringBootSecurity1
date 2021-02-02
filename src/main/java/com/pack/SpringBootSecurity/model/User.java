@@ -25,16 +25,15 @@ public class User {
     private String password;
     private String passwordConfirm;
 
-  /*  @OneToOne(cascade = CascadeType.ALL)
-    @JoinTable(name="user_role", joinColumns = @JoinColumn(name="user_id"),
-    inverseJoinColumns = @JoinColumn(name="role_id"))
-    private Role role;*/
-    
     @OneToOne
     @JoinColumn(name="role_id")
     private Role role;
   
-
+    /*  @OneToOne(cascade = CascadeType.ALL)
+    @JoinTable(name="user_role", joinColumns = @JoinColumn(name="user_id"),
+    inverseJoinColumns = @JoinColumn(name="role_id"))
+    private Role role;*/
+    
    
     public Long getId() {
         return id;

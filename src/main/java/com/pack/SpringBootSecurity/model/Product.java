@@ -2,6 +2,7 @@ package com.pack.SpringBootSecurity.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 
 
@@ -9,6 +10,7 @@ import javax.persistence.Id;
 public class Product {
 	@Id
 	private Integer id;
+	@NotNull(message="Name cannot be empty")
 	private String name;
 	private String brand;
 	private String madein;

@@ -16,8 +16,8 @@ import com.pack.SpringBootSecurity.repository.UserRepository;
 public  class UserServiceImpl implements UserService {
 	@Autowired
 	private UserRepository userRepository;
-	@Autowired
-	private RoleRepository roleRepository;
+	//@Autowired
+	//private RoleRepository roleRepository;
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
@@ -34,8 +34,8 @@ public  class UserServiceImpl implements UserService {
 	}
 
 
-	@Override
+	/*@Override
 	public void saveRole(Iterable i) {
 		roleRepository.saveAll(i);
-	}
+	}*/
 }

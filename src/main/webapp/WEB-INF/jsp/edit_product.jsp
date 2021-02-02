@@ -29,7 +29,7 @@
      <table>
             <tr>
 				<td>Product ID:</td>
-				<td><form:input path="id" readonly="readonly"/></td>
+				<td><form:input path="id" readOnly="readOnly"/></td>
 			</tr>
 			<tr>
 				<td>Product Name:</td>

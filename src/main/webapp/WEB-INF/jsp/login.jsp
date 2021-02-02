@@ -25,7 +25,6 @@
 <body>
 
 <div class="container">
-
     <form method="POST" action="${contextPath}/login" class="form-signin">
         <h2 class="form-heading">Log in</h2>
 
@@ -40,9 +39,7 @@
             <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
             <h4 class="text-center"><a href="${contextPath}/registration">Create an account</a></h4>
         </div>
-
     </form>
-
 </div>
 
 </body>
